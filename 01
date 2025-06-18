@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(){
+    int n, i;
+    printf("informe a quantidade de elementos: ");
+    scanf("%d", &n);
+    
+    int v[n + 1];
+    
+    for(i = 0; i < n; i++){
+  
+        scanf("%d", &v[i]);
+    }
+    printf("informe um numero para adicionar ao vetor: ");
+    int x;
+    scanf("%d", &x);
+    for(i = n - 1; i >= 0 && x < v[i]; i--){
+        v[i + 1] = v[i];
+    }
+    v[i + 1] = x;
+    printf("vetor\n");
+    for(i= 0; i < n + 1; i++){
+        printf("%d ", v[i]);
+    }
+
+    return 0;
+}
